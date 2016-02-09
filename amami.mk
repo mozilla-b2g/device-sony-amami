@@ -21,4 +21,7 @@ PRODUCT_MODEL := Xperia Z1 Compact (B2G)
 GAIA_DEV_PIXELS_PER_PX := 2
 BOOTANIMATION_ASSET_SIZE := 720p
 
+PRODUCT_COPY_FILES += \
+    device/sony/amami/bootrec-device:root/sbin/bootrec-device
+
 $(call inherit-product-if-exists, vendor/sony/amami-blobs/amami-vendor-blobs.mk)
