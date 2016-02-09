@@ -1,4 +1,6 @@
-# Copyright 2014 The Android Open Source Project
+#!/bin/bash
+
+# Copyright (C) 2010 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,4 +14,34 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/amami.mk
+DEVICE=amami
+MANUFACTURER=sony
+STOCK=14.6.A.1.236
+
+. ../common/extract-files.sh
+
+
+COMMON_FIRMWARE="
+	modem.b00
+	modem.b01
+	modem.b02
+	modem.b03
+	modem.b04
+	modem.b05
+	modem.b08
+	modem.b11
+	modem.b13
+	modem.b14
+	modem.b15
+	modem.b16
+	modem.b17
+	modem.b18
+	modem.b19
+	modem.b20
+	modem.b21
+	modem.b22
+	modem.b25
+	modem.b26
+	modem.mdt
+	"
+copy_files "$COMMON_FIRMWARE" "system/etc/firmware" "etc/firmware"
