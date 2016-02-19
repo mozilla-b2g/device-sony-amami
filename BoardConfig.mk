@@ -12,9 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include device/sony/rhine/BoardConfig.mk
+include device/sony/rhine/PlatformConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := D5503
 
-#BOARD_KERNEL_CMDLINE += mem=93M@0 mem=1674M@255M
+BOARD_KERNEL_CMDLINE += androidboot.hardware=amami
 BOARD_KERNEL_CMDLINE += mem=1767M
+
