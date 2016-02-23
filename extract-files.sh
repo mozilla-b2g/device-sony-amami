@@ -16,9 +16,10 @@
 
 DEVICE=amami
 MANUFACTURER=sony
-STOCK=14.6.A.0.368
+STOCK=14.6.A.1.236
 
-. ../rhine/extract-files.sh
+. ../common/extract-files.sh
+
 
 COMMON_FIRMWARE="
 	modem.b00

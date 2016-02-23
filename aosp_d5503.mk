@@ -14,32 +14,13 @@
 
 TARGET_KERNEL_CONFIG := aosp_rhine_amami_defconfig
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
-$(call inherit-product, device/sony/rhine/device.mk)
-$(call inherit-product-if-exists, vendor/sony/amami/amami-vendor.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, device/sony/amami/device.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-$(call inherit-product-if-exists, prebuilts/chromium/webview_prebuilt.mk)
-$(call inherit-product-if-exists, vendor/google/products/gms.mk)
-
-DEVICE_PACKAGE_OVERLAYS += \
-    device/sony/amami/overlay
-
-PRODUCT_COPY_FILES += \
-    device/sony/amami/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/sony/amami/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
-    device/sony/amami/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 PRODUCT_NAME := aosp_d5503
 PRODUCT_DEVICE := amami
 PRODUCT_MODEL := Xperia Z1 Compact (AOSP)
 PRODUCT_BRAND := Sony
 PRODUCT_MANUFACTURER := Sony
-
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=320 \
-    ro.usb.pid_suffix=1A7
