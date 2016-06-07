@@ -19,7 +19,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_COPY_FILES := \
     device/sony/amami/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/sony/amami/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
-    device/sony/amami/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
+    device/sony/amami/rootdir/system/etc/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf
 
 # Device Specific Permissions
 PRODUCT_COPY_FILES += \
@@ -55,4 +55,4 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/sony/rhine/platform.mk)
-$(call inherit-product-if-exists, vendor/sony/amami/amami-vendor.mk)
+$(call inherit-product-if-exists, vendor/sony/rhine-amami/amami-vendor.mk)
