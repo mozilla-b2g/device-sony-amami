@@ -22,6 +22,8 @@ STOCK=14.6.A.1.236
 
 
 COMMON_FIRMWARE="
+	mba.b00
+	mba.mdt
 	modem.b00
 	modem.b01
 	modem.b02
